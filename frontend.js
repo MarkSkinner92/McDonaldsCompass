@@ -38,7 +38,7 @@ updateGeoLocation();
 setInterval(updateGeoLocation, 4000);
 
 if ('DeviceOrientationEvent' in window) {
-    window.addEventListener('deviceorientation', handleOrientation);
+    window.addEventListener('deviceorientationabsolute', handleOrientation);
 } else {
     document.getElementById('orientation').innerText = 'Orientation not supported :(';
 }
@@ -169,7 +169,10 @@ let McDonalds = [
     [ 53.63897, -113.62394, 'St. Albert' ] ,
     [ 53.65812, -113.63083, 'Villeneuve' ] ,
     [ 53.65983, -113.6352, 'WM St Albert' ] ,
-    [ 53.36477, -113.41606, 'Rue Montalet Centre' ]
+    [ 53.36477, -113.41606, 'Rue Montalet Centre' ],
+    [53.696622361, -113.21049223, 'Fort Sask Walmart'],
+    [53.701670118, -113.20300654, 'Fort Sask Main']
+
 ]
 
 
@@ -197,7 +200,9 @@ function findClosest(mylat, mylong){
 }
 
 function setRotation(angle){
-    if(!Number.isNaN(angle)) document.getElementById('line').setAttribute("transform", "rotate(" + angle + " 0 0)");
+    if(!Number.isNaN(angle)){
+      document.getElementById('line').setAttribute("transform", "rotate(" + angle + " 0 0)");
+    }
     else console.log('value was not a number')
 }
 
