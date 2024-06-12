@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>McDonalds Finder</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <h1 id="title">McDonalds Compass</h1>
+        <p id="subtitle">By Mark Skinner</p>
+        <h1 id="distance">21 m</h1>
+        <p id="info">Aiming for _____</p>
+        <svg id="svg" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <circle id="circle" cx="50%" cy="50%" fill="none" stroke="grey" stroke-width="3" />
+            <line id="line" x1="50%" y1="50%" x2="50%" y2="30%" />
+        </svg>
+        <div id="mask">
+            <h3 class='fade-in-out' id="orientation">Waiting for Orientation (you may need to wiggle your phone)</h3>
+            <h3 class='fade-in-out' id="gps">Waiting for GPS Lock</h3>
+        </div>
+        <script src="frontend.js"></script>
+    </body>
+    <style>
+        #mask{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            padding: 20px;
+        }
+        body{
+            color:white;
+            background-color: black;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+        #line {
+            stroke: rgb(238, 255, 0);
+            stroke-width: 5;
+            transform-origin: 50% 50%;
+        }
+        #title{
+            position: relative;
+            text-align: center;
+            top:20px;
+            left:0px;
+            color: rgb(63, 63, 63);
+            margin: 0px;
+        }
+        #subtitle{
+            position: relative;
+            text-align: center;
+            top:20px;
+            left:0px;
+            color: rgb(63, 63, 63);
+            margin: 0px;
+        }
+        #info{
+            position: relative;
+            text-align: center;
+            top:50px;
+            left:0px;
+            color: rgb(123, 123, 123);
+            margin: 0px;
+        }
+        #distance{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            color: white;
+        }
+        .fade-in-out {
+            animation: fadeInOut 0.5s infinite alternate; /* Alternate between fading in and out infinitely */
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0.4; /* Start with opacity 0 (fully transparent) */
+            }
+            100% {
+                opacity: 1; /* End with opacity 1 (fully opaque) */
+            }
+        }
+        /* #info{
+            position: relative;
+            text-align: center;
+            bottom:20px;
+            left:0px;
+            color: rgb(63, 63, 63);
+            margin: 0px;
+        } */
+    </style>
+</html>
